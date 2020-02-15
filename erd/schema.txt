@@ -1,16 +1,16 @@
 # Simple Conceptual ERD
 departments
 -
-dept_no VARCHAR PK
-dept_name VARCHAR
+dept_no VARCHAR(10) PK
+dept_name VARCHAR(100)
 
 employees
 -
 emp_no INTEGER PK
 birth_date DATE
-first_name VARCHAR
-last_name VARCHAR
-gender VARCHAR
+first_name VARCHAR(30)
+last_name VARCHAR(30)
+gender VARCHAR(1)
 hire_date DATE
 
 dept_emp
@@ -23,7 +23,7 @@ emp_no INTEGER FK >- employees.emp_no
 # And a department can have one or many dept_emp
 # So, this is a many (department) to many(dept_emp)
 # relationship.
-dept_no VARCHAR FK >-< departments.dept_no
+dept_no VARCHAR(10) FK >-< departments.dept_no
 from_date DATE
 to_date DATE
 
@@ -33,10 +33,10 @@ dept_manager
 # And a department can have one or many dept_manager
 # So, this is a many (department) to many(dept_manager)
 # relationship.
-dept_no VARCHAR FK >-< departments.dept_no
+dept_no VARCHAR(10) FK >-< departments.dept_no
 # employee can be manager of zero, one, or many departments
 # or be manager of different departments over time.
-# So, this is a zero or many (dept_manager) to one (employee)
+# So, this is a zero or many (department managers) to one (employee)
 # relationship.
 emp_no INTEGER FK >0- employees.emp_no
 from_date DATE
@@ -58,8 +58,10 @@ titles
 # so, this is a one or many (titles) to one (employee)
 # relationship.
 emp_no INTEGER FK >- employees.emp_no
-title VARCHAR
+title VARCHAR(30)
 from_date DATE
 to_date DATE
+
+
 
 
