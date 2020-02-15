@@ -23,7 +23,7 @@ The first step I took in modeling and analyzing the data was inspect the various
 After creating the ERD, here are some of my observations and insights for how the different tables are related to each other:
 
 * For the dept_emp and employees tables, an employee can belong to one or many departments. So, this is a one or many (dept_emp) to one (employees) relationship. In the dept_emp table, emp_no is a foreign key that references the employees table.
-* For the department and dept_emp tables, dept_emp can belong to one or many departments, and a department can have one or many dept_emp. So, this is a many (department) to many(dept_emp) relationship.
+* For the department and dept_emp tables, dept_emp can belong to one or many departments, and a department can have one or many dept_emp. So, this is a many (department) to many (dept_emp) relationship.
 In the dept_emp table, dept_no is a foreign key that references the departments table.
 * For the dept_manager and department tables, dept_manager can belong to one or many departments, and a department can have one or many dept_manager. So, this is a many (department) to many(dept_manager)relationship. In the dept_manager table, dept_no is a foreign key that references the departments table.
 * For the dept_manager and employees tables, employee can be dept_manager of zero, one, or many departments or be dept_manager of different departments over time. So, this is a zero or many (dept_manager) to one (employee) relationship. In the dept_manager table, emp_no is a foreigh key that references the employees table.

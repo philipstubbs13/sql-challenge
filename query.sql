@@ -87,4 +87,4 @@ You look down at your badge to see that your employee ID number is 499942.
 */
 select e.emp_no, e.last_name, e.first_name
 from employees as e
-where e.emp_no = '499942';
+where e.emp_no = 499942;
