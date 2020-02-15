@@ -8,7 +8,7 @@ Data model and analysis of an employee database that includes information about 
 
 ##  <a name="overview"></a>Overview
 
-This repo includes a data model and analysis of an employee database, which includes information about company employees, such as name, title, and start/end date, from a specific corporation from the 1980s and 1990s. The work for this project is split out into 3 different parts:
+This repository includes a data model and analysis of an employee database, which includes information about company employees, such as name, title, and start/end date, from a specific corporation from the 1980s and 1990s. The work for this project is split out into 3 different parts:
 
 * [Data Modeling](#modeling)
 * [Data Engineering](#engineering)
@@ -26,8 +26,8 @@ After creating the ERD, here are some of my observations and insights for how th
 * For the department and dept_emp tables, dept_emp can belong to one or many departments, and a department can have one or many dept_emp. So, this is a many (department) to many (dept_emp) relationship.
 In the dept_emp table, dept_no is a foreign key that references the departments table.
 * For the dept_manager and department tables, dept_manager can belong to one or many departments, and a department can have one or many dept_manager. So, this is a many (department) to many(dept_manager)relationship. In the dept_manager table, dept_no is a foreign key that references the departments table.
-* For the dept_manager and employees tables, employee can be dept_manager of zero, one, or many departments or be dept_manager of different departments over time. So, this is a zero or many (dept_manager) to one (employee) relationship. In the dept_manager table, emp_no is a foreigh key that references the employees table.
-* For the salaries and employee tables, an employee can have one or many salary numbers over time. So, this is a one or many (salaries) to one (employee) relationship. In the salaries table, emp_no is a foreign key that references the employees table.
+* For the dept_manager and employees tables, employee can be dept_manager of zero, one, or many departments or be dept_manager of different departments over time. So, this is a zero or many (dept_manager) to one (employee) relationship. In the dept_manager table, emp_no is a foreign key that references the employees table.
+* For the salaries and employee tables, an employee can have one or many salary numbers over time. So, this is a one or many (salaries) to one (employees) relationship. In the salaries table, emp_no is a foreign key that references the employees table.
 * For the titles and employee tables, an employee can have one or many titles. So, this is a one or many (titles) to one (employee) relationship. In the titles table, emp_no is a foreign key that references the employees table.
 * In the employees table, emp_no is a primary key.
 
@@ -48,7 +48,16 @@ After creating the schema and importing the data into the appropriate tables to 
 * List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
 * In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
 
+### <a name="nb"></a>Jupyter Notebook
+
+In this repository, I have also included a [jupyter notebook](./employee_analysis.ipynb) file. In this file, I imported the tables from the sql database into pandas. After importing the database, I used matplotlib to create a histogram that visualizes the most common salary ranges for employees and a bar chart that shows the average salary by job title. Images of these visulizations can be found [here](./Images).
+
 ##  <a name="technologies"></a>Technologies Used
 
 * SQL
 * Quick DBD
+* Jupyter Notebook
+* Python
+* Matplotlib
+* Pandas
+* SQLAlchemy
