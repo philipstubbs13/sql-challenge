@@ -78,3 +78,13 @@ select last_name, count(last_name) as last_name_frequency_count
 from employees as e
 group by last_name
 order by last_name_frequency_count desc;
+
+/*
+Evidence in hand, you march into your boss's office and present the visualization.
+With a sly grin, your boss thanks you for your work.
+On your way out of the office, you hear the words, "Search your ID number."
+You look down at your badge to see that your employee ID number is 499942.
+*/
+select e.emp_no, e.last_name, e.first_name
+from employees as e
+where e.emp_no = '499942';
