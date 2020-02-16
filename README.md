@@ -53,7 +53,7 @@ After creating the schema and importing the data into the appropriate tables to 
 
 ### <a name="nb"></a>Jupyter Notebook
 
-In this repository, I have also included a [jupyter notebook](./employee_analysis.ipynb) file. In this file, I imported the tables from the sql database into pandas. After importing the database, I used matplotlib to create a histogram that visualizes the most common salary ranges for employees and a bar chart that shows the average salary by job title. Images of these visulizations can be found [here](./Images).
+In this repository, I have also included a [jupyter notebook](./employee_analysis.ipynb) file. In this file, I imported the tables from the sql database into pandas. After importing the database, I used matplotlib to create a histogram that visualizes the most common salary ranges for employees and a bar chart that shows the average salary by job title. Images of these visualizations can be found [here](./Images).
 
 Before you run the jupyter notebook, you will need to do the following:
 
