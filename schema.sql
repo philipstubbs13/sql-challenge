@@ -53,6 +53,13 @@ create table titles (
 	to_date date not null
 );
 
+/*
+IMPORTANT NOTE:
+If the csv files are not located in C:\data\ or you are using a mac,
+change the csv path to the location of the csv files on your system 
+before running the following to import the data from the csvs.
+*/
+
 copy departments from 'C:\data\departments.csv'
 with (format CSV, HEADER);
 
@@ -82,5 +89,3 @@ copy titles from 'C:\data\titles.csv'
 with (format CSV, HEADER);
 
 select * from titles;
-
-

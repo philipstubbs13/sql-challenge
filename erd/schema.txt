@@ -1,16 +1,24 @@
 # Simple Conceptual ERD
 departments
 -
+# The department number.
 dept_no VARCHAR(10) PK
+# The name of the department.
 dept_name VARCHAR(100)
 
 employees
 -
+# The employee number.
 emp_no INTEGER PK
+# The employee's birthday.
 birth_date DATE
+# The employee's first name.
 first_name VARCHAR(30)
+# The employee's last name.
 last_name VARCHAR(30)
+# The employee's gender.
 gender VARCHAR(1)
+# When the employee was hired.
 hire_date DATE
 
 dept_emp
@@ -24,7 +32,9 @@ emp_no INTEGER FK >- employees.emp_no
 # So, this is a many (department) to many(dept_emp)
 # relationship.
 dept_no VARCHAR(10) FK >-< departments.dept_no
+# When employee started working in department.
 from_date DATE
+# When employee stopped working in department.
 to_date DATE
 
 dept_manager
@@ -36,10 +46,12 @@ dept_manager
 dept_no VARCHAR(10) FK >-< departments.dept_no
 # employee can be manager of zero, one, or many departments
 # or be manager of different departments over time.
-# So, this is a zero or many (department managers) to one (employee)
+# So, this is a zero or many (dept_manager) to one (employees)
 # relationship.
 emp_no INTEGER FK >0- employees.emp_no
+# When manager started working in department.
 from_date DATE
+# When manager stopped working in department.
 to_date DATE
 
 salaries
@@ -48,8 +60,11 @@ salaries
 # over time. So, this is a one or many (salaries)
 # to one (employee) relationship.
 emp_no INTEGER FK >- employees.emp_no
+# The employee's salary.
 salary INTEGER
+# When employee started earning this salary.
 from_date DATE
+# When employee stopped earning this salary.
 to_date DATE
 
 titles
@@ -58,10 +73,12 @@ titles
 # so, this is a one or many (titles) to one (employee)
 # relationship.
 emp_no INTEGER FK >- employees.emp_no
+# The employee's job title.
 title VARCHAR(30)
+# When employee started having this job title.
 from_date DATE
+# When employee stopped having this job title.
 to_date DATE
-
 
 
 
